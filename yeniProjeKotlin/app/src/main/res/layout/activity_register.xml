@@ -62,10 +62,10 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registerPassword"
+                android:id="@+id/registerad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="Ad"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -77,10 +77,10 @@
             android:layout_marginStart="40dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registerUsername"
+                android:id="@+id/registersoyad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Username"
+                android:hint="Soyad"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -91,10 +91,10 @@
             android:layout_height="150dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registerTc"
+                android:id="@+id/registeruser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="TcKimlik"
+                android:hint="Username"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -106,10 +106,10 @@
             android:layout_marginStart="40dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registerDogum"
+                android:id="@+id/registerpassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Dogum"
+                android:hint="Password"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -120,10 +120,10 @@
             android:layout_height="150dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registerAsd"
+                android:id="@+id/registertc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Asd"
+                android:hint="Tc Kimlik No"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -135,10 +135,10 @@
             android:layout_marginStart="40dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/registerFgh"
+                android:id="@+id/registergmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Fgh"
+                android:hint="Gmail"
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -149,6 +149,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
+        android:id="@+id/RegisterBtn"
         android:layout_below="@id/grid"
         android:layout_centerHorizontal="true">
     </Button>
