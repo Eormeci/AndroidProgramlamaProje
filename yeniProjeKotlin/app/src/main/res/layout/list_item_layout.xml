@@ -17,7 +17,7 @@
             android:id="@+id/item_title1"
             android:text="VIP A-B-C-D"
             android:textStyle="bold"
-            android:textSize="30sp">
+            android:textSize="20sp">
         </TextView>
 
         <TextView
@@ -35,7 +35,7 @@
             android:layout_marginTop="20dp"
             android:text="KAPALI SAĞ - SOL"
             android:textStyle="bold"
-            android:textSize="30sp">
+            android:textSize="20sp">
         </TextView>
 
         <TextView
@@ -53,7 +53,7 @@
             android:layout_marginTop="20dp"
             android:text="DOĞU MARATON"
             android:textStyle="bold"
-            android:textSize="30sp">
+            android:textSize="20sp">
         </TextView>
 
         <TextView
@@ -71,7 +71,7 @@
             android:layout_marginTop="20dp"
             android:text="GÜNEY KALE ARKASI"
             android:textStyle="bold"
-            android:textSize="30sp">
+            android:textSize="20sp">
         </TextView>
 
         <TextView
@@ -89,7 +89,7 @@
             android:layout_marginTop="20dp"
             android:text="KUZEY KALE ARKASI"
             android:textStyle="bold"
-            android:textSize="30sp">
+            android:textSize="20sp">
         </TextView>
 
         <TextView
@@ -107,7 +107,7 @@
             android:layout_marginTop="20dp"
             android:text="MİSAFİR"
             android:textStyle="bold"
-            android:textSize="30sp">
+            android:textSize="20sp">
         </TextView>
 
         <TextView

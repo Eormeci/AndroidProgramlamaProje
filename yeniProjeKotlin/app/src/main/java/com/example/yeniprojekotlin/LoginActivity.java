@@ -49,8 +49,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (databaseHelper.checkUser(username, password)) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    // Başarılı giriş sonrası yapılacak işlemler
-                    
+                    // Kullanıcı adını aktararak yeni aktiviteye geçiş yap
+                    Intent intent = new Intent(LoginActivity.this, LoginSuccesfullActivity.class);
+                    intent.putExtra("username", username);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
                 }
@@ -73,4 +75,5 @@ public class LoginActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

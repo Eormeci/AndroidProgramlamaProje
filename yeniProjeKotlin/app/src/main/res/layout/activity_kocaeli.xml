@@ -94,7 +94,8 @@
 
         <!-- İkinci düzey başlık -->
         <TextView
-            android:id="@+id/subtitleTextView"
+            android:id="@+id/konumGosterButon"
+            android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Haritada konumu göster"
@@ -103,20 +104,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="12dp"/>
 
-
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/baseline_location_pin_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.756"
-            app:layout_constraintStart_toStartOf="@id/subtitleTextView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.52">
-
-        </ImageView>
-
         <TextView
             android:id="@+id/subtitleTextView2"
             android:layout_width="wrap_content"
@@ -124,7 +111,7 @@
             android:text="Oturma Planı"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/subtitleTextView"
+            app:layout_constraintTop_toBottomOf="@id/konumGosterButon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp"/>
@@ -158,6 +145,7 @@
             android:id="@+id/kocaeli_listView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:layout_marginTop="45dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -168,13 +156,29 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/satinAl"
+            android:id="@+id/satinAlBtn"
+            android:onClick="satinAl"
             android:text="Satın Al"
             app:layout_constraintTop_toBottomOf="@id/kocaeli_listView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
             tools:ignore="MissingConstraints"></Button>
+
+        <Spinner
+            android:id="@+id/kategori_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/satinAlBtn"
+            app:layout_constraintTop_toBottomOf="@id/kocaeli_listView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="30sp">
+        </Spinner>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

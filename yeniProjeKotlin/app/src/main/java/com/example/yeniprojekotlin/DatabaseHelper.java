@@ -1,5 +1,6 @@
 package com.example.yeniprojekotlin;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -22,20 +23,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_SOYAD = "soyad";
     public static final String COLUMN_TCKN = "tckn";
     public static final String COLUMN_GMAIL = "gmail";
+    public static final String COLUMN_BAKIYE = "bakiye"; // Yeni sütun
 
+    // Bu giriş yapmak için kullanılan tablo
     private static final String TABLE_CREATE_USERS =
             "CREATE TABLE " + TABLE_USERS + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_USERNAME + " TEXT, " +
                     COLUMN_PASSWORD + " TEXT);";
 
+    // Register yapanların bilgilerinin tutulduğu tablo
     private static final String TABLE_CREATE_REGISTER =
             "CREATE TABLE " + TABLE_REGISTER + " (" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     COLUMN_AD + " TEXT, " +
                     COLUMN_SOYAD + " TEXT, " +
                     COLUMN_TCKN + " TEXT, " +
-                    COLUMN_GMAIL + " TEXT);";
+                    COLUMN_GMAIL + " TEXT, " +
+                    COLUMN_BAKIYE + " INTEGER DEFAULT 0);"; // Yeni sütun ile güncellendi
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -98,6 +103,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             registerValues.put(COLUMN_SOYAD, soyad);
             registerValues.put(COLUMN_TCKN, tckn);
             registerValues.put(COLUMN_GMAIL, gmail);
+            registerValues.put(COLUMN_BAKIYE, 0); // Yeni kullanıcı için bakiye başlangıcı
             db.insert(TABLE_REGISTER, null, registerValues);
 
             db.setTransactionSuccessful();
@@ -110,4 +116,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
+
+    // Kullanıcının bakiye bilgisini döndüren yöntem
+    public int getBakiye(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int bakiye = 0;
+        Cursor cursor = null;
+        try {
+            cursor = db.query(TABLE_REGISTER, new String[]{COLUMN_BAKIYE},
+                    COLUMN_USERNAME + "=?", new String[]{username}, null, null, null);
+            if (cursor != null && cursor.moveToFirst()) {
+                bakiye = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_BAKIYE));
+            }
+        } catch (Exception e) {
+            Log.e("DatabaseHelper", "Bakiye alınırken hata: " + e.getMessage());
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+        return bakiye;
+    }
+
+    public void updateBakiye(String username, int newBakiye) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_BAKIYE, newBakiye);
+            db.update(TABLE_REGISTER, values, COLUMN_USERNAME + " = ?", new String[]{username});
+        } catch (Exception e) {
+            Log.e("DatabaseHelper", "Bakiye güncellenirken hata: " + e.getMessage());
+        } finally {
+            db.close();
+        }
+    }
+
+
+
 }
+
