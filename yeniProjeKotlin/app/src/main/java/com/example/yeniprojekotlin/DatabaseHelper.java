@@ -1,6 +1,5 @@
 package com.example.yeniprojekotlin;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -11,7 +10,7 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "userDatabase";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3; // Veritabanı versiyonunu artırın
     public static final String TABLE_USERS = "users";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_USERNAME = "username";
@@ -24,6 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_TCKN = "tckn";
     public static final String COLUMN_GMAIL = "gmail";
     public static final String COLUMN_BAKIYE = "bakiye"; // Yeni sütun
+    public static final String COLUMN_USERNAME_REGISTER = "username"; // username sütunu eklendi
 
     // Bu giriş yapmak için kullanılan tablo
     private static final String TABLE_CREATE_USERS =
@@ -40,6 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     COLUMN_SOYAD + " TEXT, " +
                     COLUMN_TCKN + " TEXT, " +
                     COLUMN_GMAIL + " TEXT, " +
+                    COLUMN_USERNAME_REGISTER + " TEXT, " + // username sütunu eklendi
                     COLUMN_BAKIYE + " INTEGER DEFAULT 0);"; // Yeni sütun ile güncellendi
 
     public DatabaseHelper(Context context) {
@@ -62,9 +63,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_REGISTER);
-        onCreate(db);
+        if (oldVersion < 2) {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_REGISTER);
+            onCreate(db);
+        }
+        if (oldVersion < 3) {
+            db.execSQL("ALTER TABLE " + TABLE_REGISTER + " ADD COLUMN " + COLUMN_USERNAME_REGISTER + " TEXT;");
+        }
     }
 
     private void addAdminUser(SQLiteDatabase db, String username, String password) {
@@ -103,6 +109,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             registerValues.put(COLUMN_SOYAD, soyad);
             registerValues.put(COLUMN_TCKN, tckn);
             registerValues.put(COLUMN_GMAIL, gmail);
+            registerValues.put(COLUMN_USERNAME_REGISTER, username); // username değerini ekle
             registerValues.put(COLUMN_BAKIYE, 0); // Yeni kullanıcı için bakiye başlangıcı
             db.insert(TABLE_REGISTER, null, registerValues);
 
@@ -124,9 +131,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = null;
         try {
             cursor = db.query(TABLE_REGISTER, new String[]{COLUMN_BAKIYE},
-                    COLUMN_USERNAME + "=?", new String[]{username}, null, null, null);
+                    COLUMN_USERNAME_REGISTER + "=?", new String[]{username}, null, null, null); // username sütunu kontrol ediliyor
             if (cursor != null && cursor.moveToFirst()) {
                 bakiye = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_BAKIYE));
+                Log.d("DatabaseHelper", "Alınan Bakiye: " + bakiye); // Log mesajı eklendi
             }
         } catch (Exception e) {
             Log.e("DatabaseHelper", "Bakiye alınırken hata: " + e.getMessage());
@@ -144,15 +152,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         try {
             ContentValues values = new ContentValues();
             values.put(COLUMN_BAKIYE, newBakiye);
-            db.update(TABLE_REGISTER, values, COLUMN_USERNAME + " = ?", new String[]{username});
+            int rows = db.update(TABLE_REGISTER, values, COLUMN_USERNAME_REGISTER + " = ?", new String[]{username}); // username sütunu kontrol ediliyor
+            Log.d("DatabaseHelper", "Güncellenen Satır Sayısı: " + rows); // Log mesajı eklendi
         } catch (Exception e) {
             Log.e("DatabaseHelper", "Bakiye güncellenirken hata: " + e.getMessage());
         } finally {
             db.close();
         }
     }
-
-
-
 }
-

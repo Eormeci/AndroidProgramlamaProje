@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 public class LoginActivity extends AppCompatActivity {
 
     private DatabaseHelper databaseHelper;
+    private static final String PREFS_NAME = "login_prefs";
+    private static final String PREF_USERNAME = "username";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +52,12 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (databaseHelper.checkUser(username, password)) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                    saveLoginInfo(username);
                     // Kullanıcı adını aktararak yeni aktiviteye geçiş yap
-                    Intent intent = new Intent(LoginActivity.this, LoginSuccesfullActivity.class);
+                    Intent intent = new Intent();
                     intent.putExtra("username", username);
-                    startActivity(intent);
+                    setResult(RESULT_OK, intent);
+                    finish(); // LoginActivity'yi kapat
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
                 }
@@ -76,4 +81,10 @@ public class LoginActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void saveLoginInfo(String username) {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(PREF_USERNAME, username);
+        editor.apply();
+    }
 }
