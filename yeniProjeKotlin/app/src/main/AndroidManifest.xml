@@ -28,6 +28,8 @@
 
         <activity
             android:name=".LoginSuccesfullActivity"
+            android:parentActivityName=".MainActivity"
+            android:launchMode="singleTask"
             android:exported="false"
             android:label="@string/title_activity_login_succesfull"
             android:theme="@style/Theme.YeniProjeKotlin" />
