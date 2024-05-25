@@ -18,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
     private static final String PREFS_NAME = "login_prefs";
     private static final String PREF_USERNAME = "username";
+    private static final String IS_LOGGED_IN = "is_logged_in";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
 
         databaseHelper = new DatabaseHelper(this);
 
-        // Register butonu
         TextView textViewRegister = findViewById(R.id.textViewRegister);
         textViewRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // Login butonu
         Button buttonLogin = findViewById(R.id.buttonLogin);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,25 +52,23 @@ public class LoginActivity extends AppCompatActivity {
                 if (databaseHelper.checkUser(username, password)) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     saveLoginInfo(username);
-                    // Kullanıcı adını aktararak yeni aktiviteye geçiş yap
+
                     Intent intent = new Intent();
                     intent.putExtra("username", username);
                     setResult(RESULT_OK, intent);
-                    finish(); // LoginActivity'yi kapat
+                    finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid Username or Password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        // Geri butonuna tıklanınca geri gitme işlemi
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
     }
 
-    // Geri butonuna tıklandığında yapılacak işlemi tanımlama
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -85,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString(PREF_USERNAME, username);
+        editor.putBoolean(IS_LOGGED_IN, true);
         editor.apply();
     }
 }

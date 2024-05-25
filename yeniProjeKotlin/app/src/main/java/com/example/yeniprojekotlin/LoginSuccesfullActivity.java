@@ -1,12 +1,12 @@
 package com.example.yeniprojekotlin;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +21,7 @@ public class LoginSuccesfullActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper;
     private TextView tvBakiye;
     private TextInputEditText eklenecekMiktar;
+    private boolean isLogged = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,14 @@ public class LoginSuccesfullActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar_loginSuccess);
         setSupportActionBar(toolbar);
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            Log.d(TAG, "onCreate: Toolbar is set");
+        } else {
+            Log.e(TAG, "onCreate: getSupportActionBar() returned null");
+        }
 
         dbHelper = new DatabaseHelper(this);
 
@@ -80,41 +89,40 @@ public class LoginSuccesfullActivity extends AppCompatActivity {
             }
         });
 
-        // Çıkış yap butonuna onClickListener ekle
+        // Çıkış butonuna onClickListener ekle
         Button btnLogout = findViewById(R.id.btn_logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick: Logout butonuna tıklandı.");
-                // Giriş bilgilerini temizle ve MainActivity'yi başlat
-                clearLoginInfo();
-                Intent intent = new Intent(LoginSuccesfullActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                isLogged = false;
+                Log.d(TAG, "btnLogout onClick: isLogged set to false.");
+                Toast.makeText(LoginSuccesfullActivity.this, "Çıkış yapıldı.", Toast.LENGTH_SHORT).show();
+                handleLogout();
             }
         });
-
-        // Geri butonuna tıklanınca geri gitme işlemi
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        }
     }
 
-    // Geri butonuna tıklandığında yapılacak işlemi tanımlama
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Log.d(TAG, "onOptionsItemSelected: item selected - " + item.getItemId());
+        Log.d(TAG, "onOptionsItemSelected: itemId = " + item.getItemId());
         if (item.getItemId() == android.R.id.home) {
-            Log.d(TAG, "onOptionsItemSelected: home button clicked");
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
+            isLogged = true;
+            Log.d(TAG, "onOptionsItemSelected: isLogged set to true.");
+            Log.d(TAG, "onOptionsItemSelected: Geri butonuna tıklandı.");
+            handleLogout();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
+    private void handleLogout() {
+        if (!isLogged) {
+            clearLoginInfo();
+        }
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish(); // Şu anki aktiviteyi sonlandır
+    }
     private void clearLoginInfo() {
         Log.d(TAG, "clearLoginInfo: Giriş bilgileri temizleniyor.");
         // SharedPreferences veya uygun başka bir yöntemi kullanarak giriş bilgilerini temizleyin

@@ -146,12 +146,10 @@
         android:text="Seçilen Bilet Bilgisi: " />
 
     <Button
-        android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Çıkış Yap"
-        android:layout_marginTop="166dp"
-        android:layout_gravity="right"/>
-
+        android:id="@+id/btn_logout"
+        android:text="Çıkış Yap">
+    </Button>
 
 </LinearLayout>
