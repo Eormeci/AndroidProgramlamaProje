@@ -14,8 +14,7 @@
         app:navigationIcon="?android:attr/homeAsUpIndicator"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
-        app:title="Kullanıcı Bilgileri">
-    </androidx.appcompat.widget.Toolbar>
+        app:title="Kullanıcı Bilgileri" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +29,7 @@
             android:layout_height="80dp"
             android:layout_marginEnd="16dp"
             android:src="@drawable/baseline_account_box_24"
-            android:contentDescription="Profil Resmi"/>
+            android:contentDescription="Profil Resmi" />
 
         <TextView
             android:id="@+id/tvUsername"
@@ -38,21 +37,21 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:text="Kullanıcı Adı"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/black"
-        android:layout_marginVertical="16dp"/>
+        android:layout_marginVertical="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:paddingBottom="8dp"
-        android:text="Bakiye Bilgileri"/>
+        android:text="Bakiye Bilgileri" />
 
     <TextView
         android:id="@+id/tvBakiye"
@@ -60,12 +59,13 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:paddingTop="2dp"
-        android:text="Bakiye :"/>
+        android:text="Bakiye :" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
@@ -74,69 +74,71 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="220dp"
                 android:layout_height="50dp"
-                android:hint="Kart Numaranızı yazınız"></com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="98dp"
-                android:layout_height="50dp"
-                android:id="@+id/eklenecekMiktar"
-                android:layout_marginStart="10dp"
-                android:hint="Kaç TL"></com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="112dp"
-                android:layout_height="50dp"
-                android:hint="Son Tarih">
-            </com.google.android.material.textfield.TextInputEditText>
+                android:hint="Kart Numaranızı yazınız" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="98dp"
+                android:layout_height="50dp"
+                android:id="@+id/eklenecekMiktar"
+                android:hint="Kaç TL" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="112dp"
                 android:layout_height="50dp"
-                android:hint="CVV">
-            </com.google.android.material.textfield.TextInputEditText>
+                android:hint="Son Tarih" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="112dp"
+                android:layout_height="50dp"
+                android:hint="CVV" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_bakiye_ekle"
             android:layout_width="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_height="50dp"
-            android:text="Bakiye Ekle">
-        </Button>
+            android:layout_marginStart="10dp"
+            android:text="Bakiye Ekle"
+            android:contentDescription="Bakiye Ekle Butonu" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="@color/black"
-        android:layout_marginVertical="16dp"/>
+        android:layout_marginVertical="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:paddingBottom="8dp"
-        android:text="Bilet Bilgileri">
-    </TextView>
+        android:text="Bilet Bilgileri" />
+
     <TextView
         android:id="@+id/tvBiletBilgisi"
         android:layout_width="wrap_content"
@@ -145,11 +147,18 @@
         android:paddingTop="2dp"
         android:text="Seçilen Bilet Bilgisi: " />
 
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTickets"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_logout"
-        android:text="Çıkış Yap">
-    </Button>
-
+        android:text="Çıkış Yap"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Çıkış Yap Butonu" />
 </LinearLayout>
