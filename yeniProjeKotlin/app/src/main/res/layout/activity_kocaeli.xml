@@ -22,6 +22,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Kullanıcı Bakiyesi -->
+        <TextView
+            android:id="@+id/tvBakiye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bakiye: 0 TL"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Logo -->
         <ImageView
@@ -29,10 +40,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/kocaeli"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvBakiye"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Başlık -->
         <TextView
@@ -40,46 +51,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="KOCAELİSPOR"
-            android:textSize="25dp"
+            android:textSize="22dp"
             android:textStyle="bold"
+            android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/logoImageView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Küçük metinler -->
         <TextView
             android:id="@+id/smallTextView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:text="Kocaelispor - Sakaryaspor"
+            android:layout_marginTop="6dp"
             app:layout_constraintTop_toBottomOf="@id/titleTextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/smallTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TFF 1.Lig 38. Hafta Karşılaşması"
-            android:textSize="15dp"
+            android:textSize="14dp"
+            android:layout_marginTop="6dp"
             app:layout_constraintTop_toBottomOf="@id/smallTextView1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/smallTextView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="7 Mayıs 2024 Saat 16:00"
-            android:textSize="15dp"
+            android:textSize="14dp"
+            android:layout_marginTop="6dp"
             app:layout_constraintTop_toBottomOf="@id/smallTextView2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Tarih -->
         <TextView
@@ -87,98 +98,90 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Yıldız Entegre Kocaelispor Stadyumu"
+            android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/smallTextView3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="12dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- İkinci düzey başlık -->
         <TextView
             android:id="@+id/konumGosterButon"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Haritada konumu göster"
+            android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/dateTextView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="12dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/subtitleTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Oturma Planı"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold"
+            android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/konumGosterButon"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Resim -->
         <ImageView
             android:id="@+id/oturmaPlaniResim"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
+            android:layout_height="130dp"
             android:src="@drawable/ks"
+            android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/subtitleTextView2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- ListView -->
-
         <TextView
+            android:id="@+id/KategorilerText"
             android:layout_width="133dp"
             android:layout_height="25dp"
-            android:text="Kategoriler;"
-            android:textSize="20dp"
+            android:text="Kategoriler:"
+            android:textSize="18dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/kocaeli_listView"
-            app:layout_constraintTop_toBottomOf="@+id/oturmaPlaniResim"
-            app:layout_constraintVertical_bias="0.4"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="16dp" />
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/oturmaPlaniResim"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-        <ListView
-            android:id="@+id/kocaeli_listView"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:layout_marginTop="45dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/KategorilerText"
+            app:layout_constraintBottom_toTopOf="@id/kategori_spinner"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Spinner ve Satin Al butonu -->
+        <Spinner
+            android:id="@+id/kategori_spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/oturmaPlaniResim"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintEnd_toStartOf="@id/satinAlBtn"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView"
+            android:textSize="30sp" />
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/satinAlBtn"
-            android:onClick="satinAl"
-            android:text="Satın Al"
-            app:layout_constraintTop_toBottomOf="@id/kocaeli_listView"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.7"
-            tools:ignore="MissingConstraints"></Button>
-
-        <Spinner
-            android:id="@+id/kategori_spinner"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/satinAlBtn"
+            android:text="Satın Al"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/satinAlBtn"
-            app:layout_constraintTop_toBottomOf="@id/kocaeli_listView"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="30sp">
-        </Spinner>
-
+            app:layout_constraintTop_toBottomOf="@id/recyclerView"
+            app:layout_constraintStart_toEndOf="@id/kategori_spinner"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
