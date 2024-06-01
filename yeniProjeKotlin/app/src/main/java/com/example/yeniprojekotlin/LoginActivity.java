@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -36,6 +37,24 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        TextView forgotButton = findViewById(R.id.textViewForgotPassword);
+        forgotButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Telefon numarası ve mesaj içeriği
+                String phoneNumber = "00000"; // Buraya telefon numaranızı yazın
+                String message = "Şifremi değiştirmek istiyorum." ;
+                try {
+                    SmsManager smsManager = SmsManager.getDefault();
+                    smsManager.sendTextMessage(phoneNumber, null, message, null, null);
+                    Toast.makeText(getApplicationContext(), "SMS başarıyla gönderildi!", Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "SMS gönderme başarısız oldu, lütfen tekrar deneyin.", Toast.LENGTH_LONG).show();
+                    e.printStackTrace();
+                }
             }
         });
 

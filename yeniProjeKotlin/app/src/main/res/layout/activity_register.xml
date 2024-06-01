@@ -5,34 +5,30 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_register"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:navigationIcon="?android:attr/homeAsUpIndicator"
-        android:background="?attr/colorPrimary"
+        android:background="@color/colorAccent"
         android:elevation="4dp"
-        app:title="Your Titlee"
+        app:title="Kayıt ol"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
     </androidx.appcompat.widget.Toolbar>
-
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="130dp"
+        android:layout_width="271dp"
+        android:layout_height="156dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="73dp"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="85dp"
         android:layout_marginEnd="77dp"
         android:layout_marginBottom="120dp"
-        android:src="@drawable/logo">
-    </ImageView>
+        android:src="@drawable/logo"></ImageView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,19 +43,22 @@
     </TextView>
 
     <GridLayout
-        android:layout_width="387dp"
-        android:layout_height="396dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/grid"
         android:layout_below="@id/passoYazisi"
         android:layout_marginStart="15dp"
         android:columnCount="2"
-        android:padding="16dp"
-        android:rowCount="3">
+        android:padding="8dp"
+        android:rowCount="3"
+        android:layout_marginTop="16dp">
 
         <!-- 1st row, 1st column -->
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="150dp"
-            android:layout_height="wrap_content">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerad"
@@ -72,9 +71,10 @@
 
         <!-- 1st row, 2nd column -->
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="40dp">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registersoyad"
@@ -87,8 +87,10 @@
 
         <!-- 2nd row, 1st column -->
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registeruser"
@@ -101,9 +103,10 @@
 
         <!-- 2nd row, 2nd column -->
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="40dp">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registerpassword"
@@ -116,8 +119,10 @@
 
         <!-- 3rd row, 1st column -->
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registertc"
@@ -130,9 +135,10 @@
 
         <!-- 3rd row, 2nd column -->
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="40dp">
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/registergmail"

@@ -1,6 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="blue">#5F70D0</color>
+    <color name="colorPrimary">#FFA726</color> <!-- Papaya Turuncu -->
+    <color name="colorSecondary">#29B6F6</color> <!-- Açık Mavi -->
+    <color name="colorAccent">#66BB6A</color> <!-- Orta Yeşil -->
+    <color name="colorPrimaryDark">#FB8C00</color> <!-- Papaya Turuncu Dark -->
+    <color name="colorPrimaryLight">#FFCC80</color> <!-- Papaya Turuncu Light -->
+    <color name="colorSecondaryDark">#0288D1</color> <!-- Açık Mavi Dark -->
+    <color name="colorSecondaryLight">#B3E5FC</color> <!-- Açık Mavi Light -->
+    <color name="colorAccentDark">#388E3C</color> <!-- Orta Yeşil Dark -->
+    <color name="colorAccentLight">#A5D6A7</color> <!-- Orta Yeşil Light -->
+    <color name="textColorOnPrimary">#000000</color> <!-- Siyah -->
+    <color name="textColorOnPrimaryDark">#FFFFFF</color> <!-- Beyaz -->
+    <color name="textColorOnPrimaryLight">#000000</color> <!-- Siyah -->
+    <color name="textColorOnSecondary">#FFFFFF</color> <!-- Beyaz -->
+    <color name="textColorOnSecondaryDark">#FFFFFF</color> <!-- Beyaz -->
+    <color name="textColorOnSecondaryLight">#000000</color> <!-- Siyah -->
 </resources>

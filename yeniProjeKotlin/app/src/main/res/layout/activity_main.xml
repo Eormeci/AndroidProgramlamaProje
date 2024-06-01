@@ -10,10 +10,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:background="@color/black"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/passo"
@@ -21,76 +19,41 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="35dp"
             android:text="Passo"
-            android:textColorHint="@color/black"
-            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/searchBar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.11"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintVertical_bias="0.11" />
 
         <com.google.android.material.search.SearchBar
             android:id="@+id/searchBar"
             android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginEnd="55dp"
             android:hint="@string/Search"
+            android:background="@color/white"
             android:textColorHint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.4"
-            app:layout_constraintStart_toStartOf="@+id/passo"
+            app:layout_constraintStart_toStartOf="@id/passo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.1"
-            app:navigationIcon="@drawable/baseline_search_24"
-            tools:ignore="MissingConstraints" />
+            app:navigationIcon="@drawable/baseline_search_24" />
 
         <ImageButton
+            android:id="@+id/loginButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="@color/white"
-            android:id="@+id/loginButton"
             android:src="@drawable/baseline_person_24" />
-
     </androidx.appcompat.widget.Toolbar>
 
-    <Button
-        android:id="@+id/ztk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ZTK"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.1" />
 
-    <Button
-        android:id="@+id/tff1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TFF 1.LİG"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="@id/ztk"
-        app:layout_constraintTop_toTopOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.1" />
 
-    <Button
-        android:id="@+id/superLig"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SÜPER LİG"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="@id/tff1"
-        app:layout_constraintTop_toTopOf="@id/toolbar"
-        app:layout_constraintVertical_bias="0.1" />
 
     <ScrollView
         android:layout_width="0dp"
@@ -99,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ztk"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
@@ -108,9 +71,71 @@
             android:orientation="vertical">
 
             <!-- Container 1 -->
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="28sp"
+                android:fontFamily="sans-serif-thin"
+                android:textStyle="bold"
+                android:layout_marginTop="26dp"
+                android:text="Hoşgeldiniz" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/ztk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ZTK"
+                    android:layout_marginStart="60dp"
+                    android:background="@drawable/rounded_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/toolbar"
+                    app:layout_constraintVertical_bias="0.1" />
+
+                <Button
+                    android:id="@+id/tff1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TFF 1.LİG"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/rounded_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="@id/ztk"
+                    app:layout_constraintTop_toTopOf="@id/toolbar"
+                    app:layout_constraintVertical_bias="0.1" />
+
+                <Button
+                    android:id="@+id/superLig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SÜPER LİG"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/rounded_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="@id/tff1"
+                    app:layout_constraintTop_toTopOf="@id/toolbar"
+                    app:layout_constraintVertical_bias="0.1" />
+
+            </LinearLayout>
+
             <FrameLayout
                 android:layout_width="350dp"
-                android:layout_height="120dp"
+                android:layout_height="130dp"
+                android:id="@+id/frame1"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:background="@color/black"
@@ -120,12 +145,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
+                    android:alpha="0.6"
                     android:src="@drawable/bg" />
 
                 <ImageView
                     android:id="@+id/kocaeliImage"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="20dp"
                     android:scaleType="fitXY"
@@ -134,7 +161,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="130dp"
+                    android:layout_marginLeft="120dp"
                     android:layout_marginTop="35dp"
                     android:text="11 Mayıs"
                     android:textColor="@color/white"
@@ -144,7 +171,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="140dp"
                     android:layout_marginTop="75dp"
                     android:text="16:00"
                     android:textColor="@color/white"
@@ -155,7 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginTop="100dp"
                     android:text="Kocaelispor"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -164,8 +191,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="215dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="100dp"
                     android:text="Sakaryaspor"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -173,8 +200,9 @@
 
                 <ImageView
                     android:id="@+id/s_karya_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="240dp"
                     android:scaleType="fitXY"
@@ -185,22 +213,25 @@
             <!-- Container 2 -->
             <FrameLayout
                 android:layout_width="350dp"
-                android:layout_height="120dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:id="@+id/ztk_fragment_container"
                 android:background="@color/black"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:alpha="0.6"
                     android:scaleType="fitXY"
                     android:src="@drawable/bg" />
 
                 <ImageView
                     android:id="@+id/besiktas_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="20dp"
                     android:scaleType="fitXY"
@@ -219,7 +250,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="145dp"
                     android:layout_marginTop="75dp"
                     android:text="20:00"
                     android:textColor="@color/white"
@@ -229,9 +260,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="85dp"
-                    android:text="Besiktas"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="100dp"
+                    android:text="Beşiktaş"
                     android:textColor="@color/white"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -239,8 +270,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="215dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginLeft="230dp"
+                    android:layout_marginTop="100dp"
                     android:text="Ankaragücü"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -248,8 +279,9 @@
 
                 <ImageView
                     android:id="@+id/ankaragucu_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="240dp"
                     android:scaleType="fitXY"
@@ -261,7 +293,7 @@
             <!-- Container 3 -->
             <FrameLayout
                 android:layout_width="350dp"
-                android:layout_height="120dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:background="@color/black"
@@ -270,13 +302,15 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:alpha="0.6"
                     android:scaleType="fitXY"
                     android:src="@drawable/bg" />
 
                 <ImageView
                     android:id="@+id/tuzla_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="20dp"
                     android:scaleType="fitXY"
@@ -285,7 +319,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="130dp"
+                    android:layout_marginLeft="120dp"
                     android:layout_marginTop="35dp"
                     android:text="11 Mayıs"
                     android:textColor="@color/white"
@@ -295,7 +329,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="145dp"
                     android:layout_marginTop="75dp"
                     android:text="16:00"
                     android:textColor="@color/white"
@@ -305,8 +339,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="100dp"
                     android:text="Tuzlaspor"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -316,7 +350,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="215dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginTop="100dp"
                     android:text="Gençlerbirliği"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -324,8 +358,9 @@
 
                 <ImageView
                     android:id="@+id/gencler_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="240dp"
                     android:scaleType="fitXY"
@@ -337,7 +372,7 @@
             <!-- Container 4 -->
             <FrameLayout
                 android:layout_width="350dp"
-                android:layout_height="120dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:background="@color/black"
@@ -346,13 +381,15 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:alpha="0.6"
                     android:scaleType="fitXY"
                     android:src="@drawable/bg" />
 
                 <ImageView
                     android:id="@+id/ads_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_height="85dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="20dp"
                     android:scaleType="fitXY"
@@ -381,8 +418,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="100dp"
                     android:text="Adana Demirspor"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -391,8 +428,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="215dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="100dp"
                     android:text="Gaziantep FK"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -400,8 +437,9 @@
 
                 <ImageView
                     android:id="@+id/antep_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_height="85dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="240dp"
                     android:scaleType="fitXY"
@@ -412,7 +450,7 @@
             <!-- Container 5 -->
             <FrameLayout
                 android:layout_width="350dp"
-                android:layout_height="120dp"
+                android:layout_height="130dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:background="@color/black"
@@ -421,13 +459,15 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:alpha="0.6"
                     android:scaleType="fitXY"
                     android:src="@drawable/bg" />
 
                 <ImageView
                     android:id="@+id/keci_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="20dp"
                     android:scaleType="fitXY"
@@ -436,7 +476,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="130dp"
+                    android:layout_marginLeft="125dp"
                     android:layout_marginTop="35dp"
                     android:text="10 Mayıs"
                     android:textColor="@color/white"
@@ -446,7 +486,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="150dp"
+                    android:layout_marginLeft="148dp"
                     android:layout_marginTop="75dp"
                     android:text="14:00"
                     android:textColor="@color/white"
@@ -457,8 +497,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginTop="85dp"
-                    android:text="Besiktas"
+                    android:layout_marginTop="100dp"
+                    android:text="Keçiörengücü"
                     android:textColor="@color/white"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -466,8 +506,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="255dp"
-                    android:layout_marginTop="85dp"
+                    android:layout_marginLeft="260dp"
+                    android:layout_marginTop="100dp"
                     android:text="Altay"
                     android:textColor="@color/white"
                     android:textSize="20dp"
@@ -475,8 +515,9 @@
 
                 <ImageView
                     android:id="@+id/altay_image"
-                    android:layout_width="80dp"
-                    android:layout_height="50dp"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginTop="-10dp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="240dp"
                     android:scaleType="fitXY"
