@@ -76,6 +76,7 @@ public class LoginSuccesfullActivity extends AppCompatActivity implements Ticket
                         updateBalance(bakiye);
                         tvBakiye.setText("Bakiye: " + bakiye + " TL");
                         eklenecekMiktar.setText("");
+<<<<<<< HEAD
                         // AlertDialog oluşturma
                         new AlertDialog.Builder(LoginSuccesfullActivity.this)
                                 .setTitle("Başarılı")
@@ -88,6 +89,8 @@ public class LoginSuccesfullActivity extends AppCompatActivity implements Ticket
                                 })
                                 .setIcon(android.R.drawable.ic_dialog_info)
                                 .show();
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
                     } else {
                         Toast.makeText(LoginSuccesfullActivity.this, "Geçersiz miktar", Toast.LENGTH_SHORT).show();
                     }
@@ -97,7 +100,10 @@ public class LoginSuccesfullActivity extends AppCompatActivity implements Ticket
             }
         });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
         Button btnLogout = findViewById(R.id.btn_logout);
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override

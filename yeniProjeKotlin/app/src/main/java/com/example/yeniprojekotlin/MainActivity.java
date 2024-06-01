@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 
         checkLoginStatus();
+<<<<<<< HEAD
 
         // Fragmentlar
         binding.ztk.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Diğer butonlar için fragment değiştirme işlemleri ekleyin.
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
 
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
         if (isLoggedIn) {
             String username = preferences.getString(PREF_USERNAME, null);
             binding.tvUsername.setText(username);
+<<<<<<< HEAD
+=======
+            // Giriş yapan kullanıcının adını göstermek için bir TextView ekleyebiliriz.
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
         }
     }
 

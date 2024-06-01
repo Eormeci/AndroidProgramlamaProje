@@ -28,7 +28,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bakiye: 0 TL"
+<<<<<<< HEAD
             android:textColor="@color/black"
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             android:textSize="18sp"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
@@ -53,7 +56,10 @@
             android:layout_height="wrap_content"
             android:text="KOCAELİSPOR"
             android:textSize="22dp"
+<<<<<<< HEAD
             android:textColor="@color/colorAccent"
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             android:textStyle="bold"
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/logoImageView"
@@ -65,8 +71,12 @@
             android:id="@+id/smallTextView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:textSize="25dp"
             android:textColor="@color/black"
+=======
+            android:textSize="18dp"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             android:text="Kocaelispor - Sakaryaspor"
             android:layout_marginTop="6dp"
             app:layout_constraintTop_toBottomOf="@id/titleTextView"
@@ -78,9 +88,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TFF 1.Lig 38. Hafta Karşılaşması"
+<<<<<<< HEAD
             android:textColor="@color/black"
             android:textSize="20dp"
             android:layout_marginTop="8dp"
+=======
+            android:textSize="14dp"
+            android:layout_marginTop="6dp"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             app:layout_constraintTop_toBottomOf="@id/smallTextView1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
@@ -90,8 +105,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="7 Mayıs 2024 Saat 16:00"
+<<<<<<< HEAD
             android:textColor="@color/black"
             android:textSize="20dp"
+=======
+            android:textSize="14dp"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             android:layout_marginTop="6dp"
             app:layout_constraintTop_toBottomOf="@id/smallTextView2"
             app:layout_constraintStart_toStartOf="parent"
@@ -103,21 +122,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Yıldız Entegre Kocaelispor Stadyumu"
+<<<<<<< HEAD
             android:textColor="@color/black"
             android:textSize="18dp"
             android:layout_marginTop="15dp"
+=======
+            android:layout_marginTop="10dp"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             app:layout_constraintTop_toBottomOf="@id/smallTextView3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- İkinci düzey başlık -->
+<<<<<<< HEAD
         <Button
             android:id="@+id/kocaeliKonumGoster"
+=======
+        <TextView
+            android:id="@+id/konumGosterButon"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Haritada konumu göster"
+<<<<<<< HEAD
             android:textColor="@color/black"
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/dateTextView"
             app:layout_constraintStart_toStartOf="parent"
@@ -128,17 +159,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Oturma Planı"
+<<<<<<< HEAD
             android:textSize="22dp"
             android:textStyle="bold"
             android:textColor="@color/black"
             android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@id/kocaeliKonumGoster"
+=======
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/konumGosterButon"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <!-- Resim -->
         <ImageView
             android:id="@+id/oturmaPlaniResim"
+<<<<<<< HEAD
             android:layout_width="331dp"
             android:layout_height="253dp"
             android:layout_marginTop="12dp"
@@ -146,6 +185,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/subtitleTextView2" />
+=======
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:src="@drawable/ks"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/subtitleTextView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
 
         <!-- ListView -->
         <TextView
@@ -153,8 +201,12 @@
             android:layout_width="133dp"
             android:layout_height="25dp"
             android:text="Kategoriler:"
+<<<<<<< HEAD
             android:textColor="@color/black"
             android:textSize="22dp"
+=======
+            android:textSize="18dp"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             android:textStyle="bold"
             android:layout_marginTop="12dp"
             app:layout_constraintTop_toBottomOf="@id/oturmaPlaniResim"

@@ -76,8 +76,12 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="220dp"
+<<<<<<< HEAD
                 android:id="@+id/kartNumarasi"
                 android:layout_height="80dp"
+=======
+                android:layout_height="50dp"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
                 android:hint="Kart Numaranızı yazınız" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,9 +91,15 @@
             android:layout_marginStart="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
+<<<<<<< HEAD
                 android:id="@+id/eklenecekMiktar"
                 android:layout_width="122dp"
                 android:layout_height="80dp"
+=======
+                android:layout_width="98dp"
+                android:layout_height="50dp"
+                android:id="@+id/eklenecekMiktar"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
                 android:hint="Kaç TL" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
@@ -106,8 +116,12 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="112dp"
+<<<<<<< HEAD
                 android:id="@+id/sonTarih"
                 android:layout_height="80dp"
+=======
+                android:layout_height="50dp"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
                 android:hint="Son Tarih" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,8 +132,12 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="112dp"
+<<<<<<< HEAD
                 android:layout_height="80dp"
                 android:id="@+id/cvv"
+=======
+                android:layout_height="50dp"
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
                 android:hint="CVV" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,7 +145,10 @@
             android:id="@+id/btn_bakiye_ekle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+<<<<<<< HEAD
             android:layout_marginTop="-10dp"
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
             android:layout_marginStart="10dp"
             android:text="Bakiye Ekle"
             android:contentDescription="Bakiye Ekle Butonu" />

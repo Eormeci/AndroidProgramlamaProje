@@ -2,7 +2,10 @@ package com.example.yeniprojekotlin;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+<<<<<<< HEAD
 import android.net.Uri;
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -74,6 +77,7 @@ public class KocaeliActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+<<<<<<< HEAD
         // Konum göster
         Button konum = findViewById(R.id.kocaeliKonumGoster);
         konum.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +100,8 @@ public class KocaeliActivity extends AppCompatActivity {
         });
 
 
+=======
+>>>>>>> 6cbdaabe338e36f5ef27bd783c7218d5c427574f
         // Satin Al butonu
         Button satinAlBtn = findViewById(R.id.satinAlBtn);
         satinAlBtn.setOnClickListener(new View.OnClickListener() {
